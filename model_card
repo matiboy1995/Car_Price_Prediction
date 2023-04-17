@@ -1,0 +1,50 @@
+# Model Card
+
+See the [example Google model cards](https://modelcards.withgoogle.com/model-reports) for inspiration. 
+
+## Model Description
+
+**Input:**
+Information about a used car. Specifically: 
+-Region for sale in
+-year
+-make / manufacturer
+-model
+-fuel type
+-odometer / millage
+-title status
+-transmission type
+-state of sale
+-long of location of sale
+-lat of location of sale
+
+**Output:** Describe the output(s) of your model
+Prediction of the price of the used car: Price
+
+**Model Architecture:** 
+RandomForestRegressor from the sklearn package with the following hyper parameters:
+
+
+UPDATE
+para_grids = {
+            "n_estimators" : [10,50,100],
+            "max_features" : ["auto", "log2", "sqrt"],
+            'max_depth' : [4,5,6,7,8,9,15],
+            "bootstrap"    : [True, False]
+        }
+
+
+## Performance - TODO
+
+Give a summary graph or metrics of how the model performs. Remember to include how you are measuring the performance and what data you analysed it on. 
+
+## Limitations - TODO
+
+There are a couple of limiations that should be noted:
+-The model has no data for cars beyond the year of 25 years old, or newer than 2021. Cars outside this period are likely to have less accurate prices
+-The data is approaching 2 years old, for makes and models that are more sensitive to age related depreciation the model will over report the price
+-The model is trained on data about cars for sale in the USA, and will likely perform worse if international data is used.
+
+## Trade-offs -TODO
+
+Outline any trade-offs of your model, such as any circumstances where the model exhibits performance issues. 
