@@ -1,0 +1,67 @@
+# Datasheet Template
+
+## Motivation
+
+- The orignal data comes from Craig's list, an online marketplace for the sale of second hand goods. This dataset was created by scraping different regional sites for car adverts, the purpose was to make that data available for data analysis projects
+- The data was created by a private individual who maintains a scraping code base here: https://github.com/AustinReese/UsedVehicleSearch
+
+ 
+## Composition
+
+- Instances that comprise the dataset represent adverts of cars / vechiles in the used car market
+- There are originally ~430k adverts
+- There's some missing data: See below by variable:
+id              100.000000
+url             100.000000
+region          100.000000
+region_url      100.000000
+price           100.000000
+year             99.717719
+manufacturer     95.866286
+model            98.763821
+condition        59.214768
+cylinders        58.377530
+fuel             99.294181
+odometer         98.969265
+title_status     98.069247
+transmission     99.401237
+VIN              62.274644
+drive            69.413653
+size             28.232524
+type             78.247283
+paint_color      69.498922
+image_url        99.984070
+description      99.983602
+state           100.000000
+lat              98.465845
+long             98.465845
+posting_date     99.984070
+
+- None of the data is confidential, and was openly published into the public domain
+
+## Collection process
+
+- Data was acquired through scraping of a free publicly available website, collection methodology is available here: https://github.com/AustinReese/UsedVehicleSearch/blob/master/scrapeVehicles.py
+- No sample strategy was deployed from the combined database
+- Over what time frame was the data collected? THIS NEEDS ANSWERING
+
+## Preprocessing/cleaning/labelling
+
+-No pre-processing of the data was performed in the data collection phase, beyond feature extracting the manefacture name from the free text descrption based on key work extraction.
+-The raw data was saved for future useage
+-The analysis then conducted by the author of the document did perform data cleaning, that included handling of missing values by removing variables ith less than 80% of data availability, dropping n/a rows, and removing extreme values (top and bottom,1%, of price distrubition, as well as cars over 25 years old)
+ 
+## Uses
+
+- The primary useage of the data will be to predict prices of cars. It does also contain image URL links that could be used to train a computer vision model, for example number place recognition. 
+- It should be noted that this data is used car sales data on a specific site, people selling these vechiles have self selected into using this site and not other sale platforms, that could mean the reputation of the site has an impact on the quality and price of the car. For example, better conditioned cars might be easy to sell to a dealer, so this dataset might be baised to worse quality and therefore cheaper  cars relative to the whole market.
+
+## Distribution
+
+- The dataset is hosted on Kaggle here: https://www.kaggle.com/datasets/austinreese/craigslist-carstrucks-data?resource=download 
+- It's not subject to any licence associated with its distrubition 
+
+## Maintenance
+
+- Data is maintained by the original author: AustinReese1998
+-It is updated every couple of mouth at irregular intervals 
