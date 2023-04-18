@@ -42,9 +42,7 @@ RandomForestRegressor(bootstrap=False, criterion='friedman_mse', max_depth=15,
 
 Based on the performance metrics provided, the model appears to have moderate predictive performance. The mean absolute error (MAE) of 5681 indicates that, on average, the model's predictions are off by about $5681. The root mean squared error (RMSE) of 8124 is a measure of the average difference between the predicted values and the actual values, and indicates that the model's predictions have a relatively high degree of variability. The R2 score of 0.6347 suggests that the model explains about 63.47% of the variance in the target variable. Finally, the cross-validated RMSE of 7954 indicates that the model's performance is relatively consistent across different folds of the data. Overall, while the model's performance is not perfect, it could still be useful for making predictions in certain contexts.
 
-
-MAE: 5681
-RMSE: 8124
-R2 Score: 0.6347
-------------------------------
-RMSE Cross-Validation: 7954
+MAE =  5681
+RMSE = 8124
+R2 Score = 0.6347
+RMSE Cross-Validation = 7954
