@@ -34,11 +34,18 @@ para_grids = {
         }
 
 
-## Performance - TODO
+## Performance
 
-Give a summary graph or metrics of how the model performs. Remember to include how you are measuring the performance and what data you analysed it on. 
+The following metrics were selected for performance measures:
 
-## Limitations - TODO
+-MAE (Mean Absolute Error): It measures the average absolute difference between the predicted and actual values. In this case, the MAE value is 5681, which means, on average, the model predictions are off by $5681
+RMSE (Root Mean Squared Error): It is the square root of the MSE and provides an estimate of the standard deviation of the residuals (prediction errors). The RMSE value is 8124, which means, on average, the model predictions are off by $8124.57
+-R2 Score: It measures the proportion of variance in the dependent variable that is predictable from the independent variables. The R2 score is 0.6347, which means the model explains 63.47% of the variance in the data, indicating a moderate correlation between the dependent and independent variables
+-RMSE Cross-Validation: It is the RMSE score calculated using the cross-validation technique, which estimates the model's performance on unseen data. The RMSE Cross-Validation value is 7954, which is slightly higher than the RMSE value, indicating that the model's performance may degrade slightly on new data.
+
+In the context of this model, and compared to other examples on kaggle the performance of the model is sub-optimal. The Benchmark for R^2 is around 80%. Similarly, the model being $5-8k off its predictions will limits it's usefulness in the context of car prediction.
+
+## Limitations
 
 There are a couple of limiations that should be noted:
 -The model has no data for cars beyond the year of 25 years old, or newer than 2021. Cars outside this period are likely to have less accurate prices
@@ -47,4 +54,4 @@ There are a couple of limiations that should be noted:
 
 ## Trade-offs -TODO
 
-Outline any trade-offs of your model, such as any circumstances where the model exhibits performance issues. 
+-The main train-off made was between computation time and data made available to train the model. Because of the limited time, and hardware, the model was only trained on a smaller proportion of the overall data.
