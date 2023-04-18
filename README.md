@@ -15,16 +15,28 @@ The machine learning model being used is Random Forest. It is a type of ensemble
 I selected this model because it was A) used in the course previously - a requirement for model selection,  B) contains a number of hyperparameters - hyperparameter optimization was a requirement of the course assignement, and C) it's more explainable than some models, so we can interpret feature importance.
 
 ## HYPERPARAMETER OPTIMSATION - TODO
-Description of which hyperparameters you have and how you chose to optimise them. 
 
-GRIDSEARCH FROM :
+The hyperparameters used were:
+-n_estimators: the number of trees in the forest for a random forest algorithm.
+-max_features: the maximum number of features to consider when splitting a node in the decision tree. This parameter can take on the values "auto", "log2", or "sqrt", which correspond to different ways of selecting the maximum number of features.
+-max_depth: the maximum depth of the decision tree.
+-bootstrap: a Boolean flag that indicates whether bootstrap samples are used when building trees.
 
+These were identified based on existing course material, and winning performance in regression problems related to car price prediction on kaggle
+
+The purpose of creating a hyperparameter grid like this is to systematically explore different combinations of hyperparameters to find the best combination that leads to the best performance of the machine learning algorithm on a given task. This is typically done using a technique called grid search, where the algorithm is trained and evaluated on each combination of hyperparameters in the grid. The combination of hyperparameters that yields the best performance is then selected as the final set of hyperparameters for the algorithm.
+
+Specific parameters utilised: 
 para_grids = {
             "n_estimators" : [10,50,100],
             "max_features" : ["auto", "log2", "sqrt"],
             'max_depth' : [4,5,6,7,8,9,15],
             "bootstrap"    : [True, False]
         }
+        
+The output was:
+RandomForestRegressor(bootstrap=False, criterion='friedman_mse', max_depth=15,
+                      max_features='log2', random_state=42)        
 
 ## RESULTS - TODO
 A summary of your results and what you can learn from your model 
