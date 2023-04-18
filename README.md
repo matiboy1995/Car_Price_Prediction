@@ -38,8 +38,10 @@ The output was:
 RandomForestRegressor(bootstrap=False, criterion='friedman_mse', max_depth=15,
                       max_features='log2', random_state=42)        
 
-## RESULTS - TODO
-A summary of your results and what you can learn from your model 
+## RESULTS
 
-You can include images of plots using the code below:
-![Screenshot](image.png)
+MAE: 5681.077861007316
+RMSE: 8124.574066756829
+R2 Score: 0.6347448554066124
+------------------------------
+RMSE Cross-Validation: 7954.379382945682
